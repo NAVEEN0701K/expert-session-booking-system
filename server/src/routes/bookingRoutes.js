@@ -1,7 +1,7 @@
 const express = require('express');
 const { body } = require('express-validator');
 const router = express.Router();
-const { createBooking, getBookingsByEmail, updateBookingStatus } = require('../controllers/bookingController-demo');
+const { createBooking, getBookingsByEmail, updateBookingStatus } = require('../controllers/bookingController');
 const validate = require('../middleware/validateMiddleware');
 
 const bookingValidation = [

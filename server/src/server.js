@@ -1,6 +1,6 @@
 const http = require('http');
 const socketIo = require('socket.io');
-const connectDB = require('./config/db-demo');
+const connectDB = require('./config/db');
 const app = require('./app');
 const socketHandler = require('./sockets/socket');
 require('dotenv').config();
@@ -23,7 +23,7 @@ socketHandler(io);
 const startServer = async () => {
   try {
     await connectDB();
-    
+
     server.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });

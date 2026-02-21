@@ -3,7 +3,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const expertRoutes = require('./routes/expertRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
-const authRoutes = require('./routes/authRoutes-demo');
+const authRoutes = require('./routes/authRoutes');
 const errorHandler = require('./middleware/errorMiddleware');
 
 dotenv.config();
