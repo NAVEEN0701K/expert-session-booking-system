@@ -2,20 +2,23 @@
     "version": 2,
     "buildCommand": "cd client && npm install && npm run build",
     "outputDirectory": "client/build",
-    "installCommand": "cd client && npm install && cd ../server && npm install",
+    "installCommand": "npm install && cd client && npm install && cd ../server && npm install",
     "functions": {
-        "api/index.js": {
+        "api/**/*.js": {
             "includeFiles": "server/**"
         }
     },
-    "rewrites": [
+    "routes": [
         {
-            "source": "/api/(.*)",
-            "destination": "/api/index.js"
+            "src": "/api/(.*)",
+            "dest": "/api/index.js"
         },
         {
-            "source": "/(.*)",
-            "destination": "/index.html"
+            "handle": "filesystem"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
         }
     ]
 }
