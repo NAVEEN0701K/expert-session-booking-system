@@ -14,9 +14,9 @@ import './AppRoutes.css';
 
 const Navigation = () => {
   const { user, logout } = useAuth();
-  
+
   const isExpert = user?.email && (
-    user.email.includes('expert') || 
+    user.email.includes('expert') ||
     user.email.includes('dr.') ||
     user.email.includes('sarah') ||
     user.email.includes('michael') ||
@@ -66,7 +66,7 @@ const AppRoutes = () => {
         <Router>
           <div className="app">
             <Navigation />
-            
+
             <main className="main-content">
               <Routes>
                 <Route path="/login" element={<LoginPage />} />
@@ -98,10 +98,10 @@ const AppRoutes = () => {
                 } />
               </Routes>
             </main>
-            
+
             <footer className="app-footer">
               <div className="footer-content">
-                <p>&copy; 2024 Expert Session Booking System. All rights reserved.</p>
+                <p>&copy; 2026 Expert Session Booking System. All rights reserved.</p>
               </div>
             </footer>
           </div>
