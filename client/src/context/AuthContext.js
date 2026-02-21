@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     const userData = localStorage.getItem('user');
-    
+
     if (token && userData) {
       try {
         const parsedUser = JSON.parse(userData);
@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem('user');
       }
     }
-    
+
     setLoading(false);
   }, []);
 
@@ -45,6 +45,7 @@ export const AuthProvider = ({ children }) => {
     setIsAuthenticated(false);
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    window.location.href = '/login';
   };
 
   const value = {

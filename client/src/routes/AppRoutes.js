@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ExpertListPage from '../pages/ExpertListPage';
 import ExpertDetailPage from '../pages/ExpertDetailPage';
 import BookingPage from '../pages/BookingPage';
@@ -96,6 +96,7 @@ const AppRoutes = () => {
                     <MyBookingsPage />
                   </ProtectedRoute>
                 } />
+                <Route path="*" element={<Navigate to="/login" replace />} />
               </Routes>
             </main>
 
