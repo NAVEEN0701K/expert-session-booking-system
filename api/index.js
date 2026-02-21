@@ -19,10 +19,5 @@ module.exports = async (req, res) => {
         }
     }
 
-    // Set io to null for serverless (no websockets)
-    if (!req.app.get('io')) {
-        req.app.set('io', null);
-    }
-
     return app(req, res);
 };
